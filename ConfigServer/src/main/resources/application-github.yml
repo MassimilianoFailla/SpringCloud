@@ -1,0 +1,27 @@
+# ==============================================================
+# = Authentication Server JWT
+# = PROFILO GITHUB
+# ==============================================================
+
+spring:
+  application:
+    name: config-server-github
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/MassimilianoFailla/SpringCloud/tree/master/ConfigServer
+          username: MassimilianoFailla
+          password: ENC(MUIkh1074Kn3UyEaIwQ7Rw==)
+          cloneOnStart: true
+          
+# ==============================================================
+# = Actuator Info
+# ==============================================================
+info:
+  assistenza:
+    nome: "Massimiliano Failla"
+  nome:
+    nome-app: "Config-Server"
+    profilo: "GITHUB"
+          

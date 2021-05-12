@@ -1,0 +1,23 @@
+# ==============================================================
+# = Authentication Server JWT
+# = PROFILO GIT
+# ==============================================================
+
+spring:
+  application:
+    name: config-server-git
+  cloud:
+    config:
+      server:
+        git:
+          uri: C:\Users\User\Desktop\SpringCloudProject\ConfigServer\git-config-repository
+          
+# ==============================================================
+# = Actuator Info
+# ==============================================================
+info:
+  assistenza:
+    nome: "Massimiliano Failla"
+  nome:
+    nome-app: "Config-Server"
+    profilo: "GIT"
