@@ -1,0 +1,845 @@
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@459e394, org.springframework.security.web.context.SecurityContextPersistenceFilter@7ec2c4d2, org.springframework.security.web.header.HeaderWriterFilter@1e55ab04, org.springframework.security.web.authentication.logout.LogoutFilter@70beebac, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@3c95a512, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d56305f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@215da5bf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@428887d7, org.springframework.security.web.session.SessionManagementFilter@71d76170, org.springframework.security.web.access.ExceptionTranslationFilter@496fc042, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3d731344]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37064f81, org.springframework.security.web.context.SecurityContextPersistenceFilter@4dd6928d, org.springframework.security.web.header.HeaderWriterFilter@7efcaa6c, org.springframework.security.web.authentication.logout.LogoutFilter@44b08323, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@423c3123, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@430711f8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5ece8c17, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f622ba1, org.springframework.security.web.session.SessionManagementFilter@2a376596, org.springframework.security.web.access.ExceptionTranslationFilter@41a8c173, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@708a884c]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37064f81, org.springframework.security.web.context.SecurityContextPersistenceFilter@4dd6928d, org.springframework.security.web.header.HeaderWriterFilter@7efcaa6c, org.springframework.security.web.authentication.logout.LogoutFilter@44b08323, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@423c3123, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@430711f8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5ece8c17, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f622ba1, org.springframework.security.web.session.SessionManagementFilter@2a376596, org.springframework.security.web.access.ExceptionTranslationFilter@41a8c173, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@708a884c]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [https-jsse-nio-5443-exec-7] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-05-2021 [https-jsse-nio-5443-exec-7] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/articoli/cerca/codice/049477702
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /api/articoli/cerca/codice/049477702] with attributes [hasAnyRole('ROLE_USER')]
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/articoli/cerca/codice/049477702
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-6] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/heal
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/heal] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/heal
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/heal
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-5] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/heal] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/heal
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/heal
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-2] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/heal] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/heal
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-6] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/healt] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/healt] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@785f1d9e, org.springframework.security.web.context.SecurityContextPersistenceFilter@719d3948, org.springframework.security.web.header.HeaderWriterFilter@4057a433, org.springframework.security.web.authentication.logout.LogoutFilter@3b63da61, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@135e175b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@68046cb2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a0ada6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4ce8cf76, org.springframework.security.web.session.SessionManagementFilter@13443536, org.springframework.security.web.access.ExceptionTranslationFilter@6bc3c6f2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@54f447e3]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [https-jsse-nio-5443-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-05-2021 [https-jsse-nio-5443-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-6] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/healt] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/healt] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: null
+11-05-2021 [https-jsse-nio-5443-exec-8] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - TOKEN NON VALIDO
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Failed to authorize filter invocation [GET /actuator/healt] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-9] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/healt] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-6] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/healt] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-2] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/healt] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61ca304c, org.springframework.security.web.context.SecurityContextPersistenceFilter@784627ac, org.springframework.security.web.header.HeaderWriterFilter@192ad5fd, org.springframework.security.web.authentication.logout.LogoutFilter@76644ae8, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@55966943, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c1d3ffb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74ff31fe, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d01e1be, org.springframework.security.web.session.SessionManagementFilter@79dcab86, org.springframework.security.web.access.ExceptionTranslationFilter@7d89b6c4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3075bc1e]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [RMI TCP Connection(5)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-05-2021 [RMI TCP Connection(5)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/healt] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-3] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/healt] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/healt
+11-05-2021 [https-jsse-nio-5443-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator
+11-05-2021 [https-jsse-nio-5443-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-10] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator
+11-05-2021 [https-jsse-nio-5443-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-2] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/health] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/metrics
+11-05-2021 [https-jsse-nio-5443-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-1] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/metrics] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/metrics
+11-05-2021 [https-jsse-nio-5443-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/metrics/process.cpu.usage
+11-05-2021 [https-jsse-nio-5443-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-3] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/metrics/process.cpu.usage] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/metrics/process.cpu.usage
+11-05-2021 [https-jsse-nio-5443-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/metrics/http.server.requests
+11-05-2021 [https-jsse-nio-5443-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-4] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/metrics/http.server.requests] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/metrics/http.server.requests
+11-05-2021 [https-jsse-nio-5443-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/metrics/http.server.response
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-5] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/metrics/http.server.response] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/metrics/http.server.response
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/mappings
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-6] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/mappings] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/mappings
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b40306, org.springframework.security.web.context.SecurityContextPersistenceFilter@43ccfb31, org.springframework.security.web.header.HeaderWriterFilter@290e7f05, org.springframework.security.web.authentication.logout.LogoutFilter@63aff08b, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@66ece128, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b3cf080, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f283415, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@50ad329a, org.springframework.security.web.session.SessionManagementFilter@2f1ad068, org.springframework.security.web.access.ExceptionTranslationFilter@54a27d14, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6d7634a7]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [https-jsse-nio-5443-exec-9] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-05-2021 [https-jsse-nio-5443-exec-9] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-9] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4f9ffcbd, org.springframework.security.web.context.SecurityContextPersistenceFilter@60875f92, org.springframework.security.web.header.HeaderWriterFilter@2536dff, org.springframework.security.web.authentication.logout.LogoutFilter@7a14377d, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@de2882b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6cd19ad9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5fd5373f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@79ee2f5e, org.springframework.security.web.session.SessionManagementFilter@4238e804, org.springframework.security.web.access.ExceptionTranslationFilter@dcf0ba2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@24c71621]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [RMI TCP Connection(1)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-05-2021 [RMI TCP Connection(1)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-5] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-1] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-2] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-2] WARN  c.m.w.s.CustomUserDetailsService - Connessione al servizio di autenticazione non riuscita!!
+11-05-2021 [https-jsse-nio-5443-exec-2] WARN  c.m.w.s.CustomUserDetailsService - Utente Nicola non Trovato!!
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.core.userdetails.UsernameNotFoundException: Utente Nicola non Trovato!!
+	at com.massimiliano.webapp.security.CustomUserDetailsService.loadUserByUsername(CustomUserDetailsService.java:44)
+	at com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter.doFilterInternal(JwtTokenAuthorizationOncePerRequestFilter.java:68)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:667)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Failed to authorize filter invocation [GET /error] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@9a5bde0, org.springframework.security.web.context.SecurityContextPersistenceFilter@e67bf4d, org.springframework.security.web.header.HeaderWriterFilter@6995f75e, org.springframework.security.web.authentication.logout.LogoutFilter@4a2911df, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@4166d854, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d89b6c4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1bfd60e9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f0a130c, org.springframework.security.web.session.SessionManagementFilter@57312a45, org.springframework.security.web.access.ExceptionTranslationFilter@6b066f78, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25436ba9]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 5051 is already in use
+11-05-2021 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 5051 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 5051 or configure this application to listen on another port.
+
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2339e0d, org.springframework.security.web.context.SecurityContextPersistenceFilter@4bcb6362, org.springframework.security.web.header.HeaderWriterFilter@241d3793, org.springframework.security.web.authentication.logout.LogoutFilter@6690101d, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@1fe52f16, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@72052727, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@20fd2f3a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d4f6c, org.springframework.security.web.session.SessionManagementFilter@7757bd7f, org.springframework.security.web.access.ExceptionTranslationFilter@32ab607b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@59846b7c]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 5051 is already in use
+11-05-2021 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 5051 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 5051 or configure this application to listen on another port.
+
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2339e0d, org.springframework.security.web.context.SecurityContextPersistenceFilter@4bcb6362, org.springframework.security.web.header.HeaderWriterFilter@241d3793, org.springframework.security.web.authentication.logout.LogoutFilter@6690101d, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@1fe52f16, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@72052727, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@20fd2f3a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d4f6c, org.springframework.security.web.session.SessionManagementFilter@7757bd7f, org.springframework.security.web.access.ExceptionTranslationFilter@32ab607b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@59846b7c]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 5051 is already in use
+11-05-2021 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 5051 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 5051 or configure this application to listen on another port.
+
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21147d0a, org.springframework.security.web.context.SecurityContextPersistenceFilter@3488e870, org.springframework.security.web.header.HeaderWriterFilter@49295a0c, org.springframework.security.web.authentication.logout.LogoutFilter@776c743f, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@2834b29, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@533c628e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a28513c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b37eff, org.springframework.security.web.session.SessionManagementFilter@59ffa615, org.springframework.security.web.access.ExceptionTranslationFilter@4c16fde7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@53856db3]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [RMI TCP Connection(2)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-05-2021 [RMI TCP Connection(2)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-10] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4f9ffcbd, org.springframework.security.web.context.SecurityContextPersistenceFilter@60875f92, org.springframework.security.web.header.HeaderWriterFilter@2536dff, org.springframework.security.web.authentication.logout.LogoutFilter@7a14377d, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@de2882b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6cd19ad9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5fd5373f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@79ee2f5e, org.springframework.security.web.session.SessionManagementFilter@4238e804, org.springframework.security.web.access.ExceptionTranslationFilter@dcf0ba2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@24c71621]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [RMI TCP Connection(1)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-05-2021 [RMI TCP Connection(1)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+11-05-2021 [https-jsse-nio-5443-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-4] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b0abb0d, org.springframework.security.web.context.SecurityContextPersistenceFilter@26de1344, org.springframework.security.web.header.HeaderWriterFilter@4661dd9f, org.springframework.security.web.authentication.logout.LogoutFilter@35a3fd4, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@5f1f1ae3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2fc2e4a6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@157e694e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a20aa92, org.springframework.security.web.session.SessionManagementFilter@2986ede2, org.springframework.security.web.access.ExceptionTranslationFilter@784627ac, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6a9b0452]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [RMI TCP Connection(1)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-05-2021 [RMI TCP Connection(1)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4523908a, org.springframework.security.web.context.SecurityContextPersistenceFilter@289680fb, org.springframework.security.web.header.HeaderWriterFilter@5811e649, org.springframework.security.web.authentication.logout.LogoutFilter@5ddc0351, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@74fb7dd0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@378cec0c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ad62e48, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5bceb723, org.springframework.security.web.session.SessionManagementFilter@66d9d89d, org.springframework.security.web.access.ExceptionTranslationFilter@4e1eced3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5a4357fb]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [RMI TCP Connection(5)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-05-2021 [RMI TCP Connection(5)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-2] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58d200bf, org.springframework.security.web.context.SecurityContextPersistenceFilter@2c12b659, org.springframework.security.web.header.HeaderWriterFilter@197cd40, org.springframework.security.web.authentication.logout.LogoutFilter@58e650dc, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@65acb129, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ef3a3ec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56e7babd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@9d98f19, org.springframework.security.web.session.SessionManagementFilter@1d48256b, org.springframework.security.web.access.ExceptionTranslationFilter@16b5063e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@270ce106]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [RMI TCP Connection(4)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-05-2021 [RMI TCP Connection(4)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@476182cf, org.springframework.security.web.context.SecurityContextPersistenceFilter@4fcee731, org.springframework.security.web.header.HeaderWriterFilter@1bfd60e9, org.springframework.security.web.authentication.logout.LogoutFilter@56ad6de8, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@1e2c072a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2a9e2b81, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@26de1344, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@18a723f3, org.springframework.security.web.session.SessionManagementFilter@fd3f08e, org.springframework.security.web.access.ExceptionTranslationFilter@2d946917, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d01e1be]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [RMI TCP Connection(3)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-05-2021 [RMI TCP Connection(3)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5aadba8b, org.springframework.security.web.context.SecurityContextPersistenceFilter@46df7aee, org.springframework.security.web.header.HeaderWriterFilter@7abb7e03, org.springframework.security.web.authentication.logout.LogoutFilter@57705fda, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@4a4bfdb0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2dc43ac9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f0d3f78, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@cbda654, org.springframework.security.web.session.SessionManagementFilter@6f9feca6, org.springframework.security.web.access.ExceptionTranslationFilter@25bcd35, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@582fd009]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [RMI TCP Connection(5)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-05-2021 [RMI TCP Connection(5)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/info
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@368ebddf, org.springframework.security.web.context.SecurityContextPersistenceFilter@15e744ac, org.springframework.security.web.header.HeaderWriterFilter@271b58b8, org.springframework.security.web.authentication.logout.LogoutFilter@14e5bb78, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@269b7c51, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67cb0d10, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6bd74c91, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@37d0a148, org.springframework.security.web.session.SessionManagementFilter@2e9f935d, org.springframework.security.web.access.ExceptionTranslationFilter@2c79160f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@19876988]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [RMI TCP Connection(2)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-05-2021 [RMI TCP Connection(2)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/custom/info
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/custom/info] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/custom/info
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/customInfo
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/customInfo] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/customInfo
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-05-2021 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+11-05-2021 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11-05-2021 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+11-05-2021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2021 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/auth', POST] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/**', OPTIONS] with []
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/', GET] with []
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/articoli/noauth/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_USER')] for Ant [pattern='/api/articoli/cerca/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/inserisci/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/modifica/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyRole('ROLE_ADMIN')] for Ant [pattern='/api/articoli/elimina/**']
+11-05-2021 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+11-05-2021 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@74f48fe, org.springframework.security.web.context.SecurityContextPersistenceFilter@1de37664, org.springframework.security.web.header.HeaderWriterFilter@3b864149, org.springframework.security.web.authentication.logout.LogoutFilter@5271f93d, com.massimiliano.webapp.security.JwtTokenAuthorizationOncePerRequestFilter@6fb52c09, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15c71f5c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3171f6a3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@251b0644, org.springframework.security.web.session.SessionManagementFilter@636c705, org.springframework.security.web.access.ExceptionTranslationFilter@3c12b9df, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@688c82cf]
+11-05-2021 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11-05-2021 [RMI TCP Connection(2)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-05-2021 [RMI TCP Connection(2)-172.28.224.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/customInfo
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-7] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/customInfo] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/customInfo
+11-05-2021 [https-jsse-nio-5443-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/customInfo/pippo
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-8] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [GET /actuator/customInfo/pippo] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/customInfo/pippo
+11-05-2021 [https-jsse-nio-5443-exec-8] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /actuator/customInfo/pippo
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-6] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [POST /actuator/customInfo/pippo] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured POST /actuator/customInfo/pippo
+11-05-2021 [https-jsse-nio-5443-exec-6] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+11-05-2021 [https-jsse-nio-5443-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing DELETE /actuator/customInfo/pippo
+11-05-2021 [https-jsse-nio-5443-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+11-05-2021 [https-jsse-nio-5443-exec-10] WARN  c.m.w.s.JwtTokenAuthorizationOncePerRequestFilter - Token: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaWNvbGEiLCJleHAiOjE2MjA4MDUyNTksImlhdCI6MTYyMDcxODg1OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl19.I_XkqYZrC--IKNw8oWfl_grclVJcllsFBz_CrtWXyLkj2mkIDUGA6_7qGDjwC1RRCmQGgf3YF9-7qgXfjcGGvg
+11-05-2021 [https-jsse-nio-5443-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [DELETE /actuator/customInfo/pippo] with attributes [authenticated]
+11-05-2021 [https-jsse-nio-5443-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured DELETE /actuator/customInfo/pippo
+11-05-2021 [https-jsse-nio-5443-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request

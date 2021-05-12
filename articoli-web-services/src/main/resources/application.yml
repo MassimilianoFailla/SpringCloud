@@ -1,0 +1,123 @@
+# ==============================================================
+# = Articoli Web Service - Versione Autenticazione JWT
+# ==============================================================
+
+server:
+  port: 5443
+  #impostazioni ssl dal file ssl-server.jks
+# ==============================================================
+# = Impostazioni ssl
+# ==============================================================
+  ssl:
+    enabled: true
+    key-store-type: PKCS12
+    key-store: classpath:ssl-server.jks
+    key-store-password: 123_Stella
+
+spring:
+  application:
+    name: ProductsWebService
+# ==============================================================
+# = DBMS PostgreSQL Parameters
+# ==============================================================
+  datasource:
+    initialization-mode: always
+    password: 123_Stella
+    platform: postgres
+    url: jdbc:postgresql://localhost:5433/AlphaShop
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    show-sql: true
+
+
+# ==============================================================
+# = Actuator parametri
+# ==============================================================
+management:
+  info:
+    git:
+      mode: full
+  endpoint:
+    health:
+      show-details: WHEN_AUTHORIZED
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics, customInfo
+
+# ==============================================================
+# = Actuator Info
+# ==============================================================
+info:
+  assistenza:
+    nome: "Massimiliano"
+    mail: "madalinvalentin.failla@gmail.com"
+    telefono: "3276231200"
+    orario: "9-20"
+  nome:
+    nome-app: "Prova SpringBoot - SpringClouds"
+
+
+
+
+# ==============================================================
+# = Proprietà Livello Log
+# = Default ERROR, WARN e INFO
+# = Levels: TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF
+# ==============================================================
+
+logging:
+  file:
+    name: ArtSrv.log
+    max-size: 1MB
+    #path: "/logs"
+  pattern:
+    file: "%d{ dd-MM-yyyy } [%thread] %-5level %logger{36} - %msg%n"
+    #console: "%d{dd-MM-yyyy HH:mm:ss} - %msg%n"
+
+  # Livello del Log generale
+  level:
+    root: WARN
+    # Livello di log specifico
+    #i vari package specifici per i determinati log
+    org.springframework.security: DEBUG
+    org.hibernate: INFO
+    org.springframework.web: INFO
+    com.xantrix.webapp.controller: INFO
+
+
+# ==============================================================
+# = Proprietà Servizio gestUser
+# ==============================================================          
+gestuser:
+  password: BimBumBam_2018
+  srvUrl: http://localhost:8019/api/utenti/cerca/userid/
+  userId: ReadUser
+  
+# ==============================================================
+# = Parametri Sicurezza JWT 
+# ==============================================================
+sicurezza:
+    uri: /auth
+    refresh: /refresh
+    header: Authorization
+    prefix: Bearer 
+    expiration: 86400
+    secret: 123_Stella
+    
+
+
+
+    
+    
+
+  
+
